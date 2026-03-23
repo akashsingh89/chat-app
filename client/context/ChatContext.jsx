@@ -33,7 +33,7 @@ export const ChatProvider = ({ children }) => {
         setMessages(data.messages);
       }
     } catch (error) {
-      toast.error(error.messages);
+      toast.error(error.message);
     }
   };
 
