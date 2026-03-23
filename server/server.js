@@ -40,7 +40,10 @@ io.on("connection", (socket) => {
 
 // Middleware setup
 app.use(express.json({ limit: "4mb" }));
-app.use(cors());
+app.use(cors({
+  origin: "https://akash-chatapp-123.netlify.app",
+  credentials: true
+}));
 
 app.use("/api/status", (req, res) => res.send("Server is Live"));
 app.use("/api/auth", userRouter);
